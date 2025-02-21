@@ -66,6 +66,42 @@ export function AboutUs() {
             ))}
           </dl>
         </div>
+        <div className="mx-auto mt-16 max-w-2xl text-center">
+          <motion.h3 
+            className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            Our Mission
+          </motion.h3>
+          <motion.p 
+            className="mt-6 text-lg leading-8 text-gray-600"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            To realize a day where each and everyone on the planet can afford and access modern technological products to lead a healthier life.
+          </motion.p>
+        </div>
+        <div className="mx-auto mt-16 max-w-2xl text-center">
+          <motion.h3 
+            className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            Our Vision
+          </motion.h3>
+          <motion.p 
+            className="mt-6 text-lg leading-8 text-gray-600"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            To innovate AI-driven predictive and preventive solutions with the right fusion of advanced diagnostics to save and improve more human lives.
+          </motion.p>
+        </div>
       </div>
     </section>
   );

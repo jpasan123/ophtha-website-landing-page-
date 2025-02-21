@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Award, Users, Clock, Target } from 'lucide-react';
+import { AwardSlider } from '../ui/AwardSlider';
 
 export function Achievements() {
   const stats = [
@@ -25,6 +26,7 @@ export function Achievements() {
             Setting new standards in AI-powered medical diagnostics with proven results and recognition.
           </p>
         </motion.div>
+
         <motion.dl 
           className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4"
           initial={{ opacity: 0, y: 20 }}
@@ -39,6 +41,8 @@ export function Achievements() {
             </div>
           ))}
         </motion.dl>
+
+        <AwardSlider />
       </div>
     </section>
   );
