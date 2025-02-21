@@ -45,45 +45,79 @@ export function Contact() {
             transition={{ duration: 0.5 }}
             className="space-y-8"
           > */}
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Our Location</h3>
-                    <p className="text-gray-600">
-                    Bay X, Trace Expert City<br />
-                      Maradana Road<br />
-                      Colombo 10, Sri Lanka
-                    </p>
-                  </div>
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <MapPin className="h-6 w-6 text-primary" />
                 </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <Phone className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Phone</h3>
-                    <p className="text-gray-600"> 076 621 0120</p>
-                  </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Our Location</h3>
+                  <p className="text-gray-600">
+                    Bay X, Trace Expert City, Maradana Road<br />
+                    Colombo 10, Sri Lanka.
+                  </p>
                 </div>
+              </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <Mail className="h-6 w-6 text-primary" />
+              {/* Google Maps Integration */}
+              <div className="relative group mt-6">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-900 rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+                <div className="relative bg-white rounded-2xl shadow-xl border border-blue-100 overflow-hidden">
+                  <div className="aspect-[21/9] w-full">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8661325756734!2d79.85888677489614!3d6.930059893067721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2591076e625a3%3A0xad34e9e40449036b!2sTrace%20Expert%20City!5e0!3m2!1sen!2sus!4v1706579876041!5m2!1sen!2sus"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="w-full h-full"
+                    ></iframe>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Email</h3>
-                    <p className="text-gray-600">dhanuh.es@gmail.com</p>
+                  <div className="p-4 bg-white">
+                    <div className="flex items-center justify-between flex-wrap gap-4">
+                      <div className="flex items-center space-x-3">
+                        <MapPin className="h-5 w-5 text-blue-600" />
+                        <span className="text-sm text-gray-900">Trace Expert City, Colombo 10, Sri Lanka</span>
+                      </div>
+                      <a
+                        href="https://www.google.com/maps/place/Trace+Expert+City/@6.9300599,79.8588868,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae2591076e625a3:0xad34e9e40449036b!8m2!3d6.9300599!4d79.8614617!16s%2Fg%2F1q6j8f3r1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 text-sm border border-transparent font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                      >
+                        Get Directions
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* <div className="h-[400px] rounded-lg overflow-hidden shadow-lg">
+              <div className="flex items-start space-x-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <Phone className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Phone</h3>
+                  <p className="text-gray-600"> 076 621 0120</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <Mail className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Email</h3>
+                  <p className="text-gray-600">dhanuh.es@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="h-[400px] rounded-lg overflow-hidden shadow-lg">
               <GoogleMapComponent />
             </div>
           </motion.div> */}
@@ -149,7 +183,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={6}
+                  rows={12}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                 ></textarea>
               </div>
@@ -184,40 +218,6 @@ export function Contact() {
                   }}
                 />
               </Button>
-              {/* Google Maps Integration */}
-              <div className="relative group mt-6">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-900 rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
-                <div className="relative bg-white rounded-2xl shadow-xl border border-blue-100 overflow-hidden">
-                  <div className="aspect-[21/9] w-full">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8661325756734!2d79.85888677489614!3d6.930059893067721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2591076e625a3%3A0xad34e9e40449036b!2sTrace%20Expert%20City!5e0!3m2!1sen!2sus!4v1706579876041!5m2!1sen!2sus"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="w-full h-full"
-                    ></iframe>
-                  </div>
-                  <div className="p-4 bg-white">
-                    <div className="flex items-center justify-between flex-wrap gap-4">
-                      <div className="flex items-center space-x-3">
-                        <MapPin className="h-5 w-5 text-blue-600" />
-                        <span className="text-sm text-gray-900">Trace Expert City, Colombo 10, Sri Lanka</span>
-                      </div>
-                      <a 
-                        href="https://www.google.com/maps/place/Trace+Expert+City/@6.9300599,79.8588868,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae2591076e625a3:0xad34e9e40449036b!8m2!3d6.9300599!4d79.8614617!16s%2Fg%2F1q6j8f3r1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center px-4 py-2 text-sm border border-transparent font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors"
-                      >
-                        Get Directions
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </form>
           </motion.div>
         </div>
