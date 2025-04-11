@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
@@ -18,6 +18,34 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleMobileMenuClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const href = e.currentTarget.getAttribute('href');
+    if (href?.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        setMobileMenuOpen(false); // Close menu first
+        setTimeout(() => { // Add delay for smooth transition
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else if (href === '/') {
+      setMobileMenuOpen(false);
+    }
+  };
+
+  // Add scroll lock when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <header className="fixed w-full bg-[#000033]/95 backdrop-blur supports-[backdrop-filter]:bg-[#000033]/60 z-50">
@@ -70,29 +98,29 @@ export function Header() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - updated styles */}
       <div
         className={cn(
-          'lg:hidden',
-          mobileMenuOpen ? 'fixed inset-0 top-20 z-50 bg-[#000033]/95 backdrop-blur' : 'hidden'
+          'fixed inset-0 top-20 z-40 bg-[#000033] transform transition-transform duration-300 ease-in-out lg:hidden',
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
-        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex flex-col gap-y-4">
+        <div className="px-6 py-6">
+          <div className="flex flex-col space-y-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-base font-semibold leading-7 text-white hover:text-[#1ED4D4] transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+                className="block text-base font-semibold text-white hover:text-[#1ED4D4] transition-colors py-4 border-b border-gray-800"
+                onClick={handleMobileMenuClick}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="mt-4 pt-4 border-t border-gray-700">
+            <div className="pt-4">
               <Link
                 href="/try-now"
-                className="rounded-md bg-[#1ED4D4] px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#17B8B8] transition-colors w-full inline-block text-center"
+                className="block w-full text-center rounded-md bg-[#1ED4D4] px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-[#17B8B8] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Try Now
