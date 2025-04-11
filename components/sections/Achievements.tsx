@@ -27,7 +27,7 @@ export function Achievements() {
           </p>
         </motion.div>
 
-        <motion.dl 
+        {/* <motion.dl 
           className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ export function Achievements() {
               <dd className="text-3xl font-semibold tracking-tight text-white">{stat.value}</dd>
             </div>
           ))}
-        </motion.dl>
+        </motion.dl> */}
 
         <AwardSlider />
       </div>
