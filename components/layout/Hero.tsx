@@ -33,12 +33,14 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <Link
-                  href="/try-now"
+                <a
+                  href="http://aes.ophtha.health/#/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-md bg-[#1ED4D4] px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-[#17B8B8] transition-colors"
                 >
                   Try Now
-                </Link>
+                </a>
               </motion.div>
             </div>
             <motion.div 

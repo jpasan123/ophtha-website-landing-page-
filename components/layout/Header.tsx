@@ -88,17 +88,20 @@ export function Header() {
             </Link>
           ))}
         </div>
+        {/* Desktop Try Now button */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link
-            href="/try-now"
+          <a
+            href="http://aes.ophtha.health/#/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-md bg-[#1ED4D4] px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#17B8B8] transition-colors"
           >
             Try Now
-          </Link>
+          </a>
         </div>
       </nav>
 
-      {/* Mobile menu - updated styles */}
+      {/* Mobile menu */}
       <div
         className={cn(
           'fixed inset-0 top-20 z-40 bg-[#000033] transform transition-transform duration-300 ease-in-out lg:hidden',
@@ -118,13 +121,15 @@ export function Header() {
               </Link>
             ))}
             <div className="pt-4">
-              <Link
-                href="/try-now"
+              <a
+                href="http://aes.ophtha.health/#/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full text-center rounded-md bg-[#1ED4D4] px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-[#17B8B8] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Try Now
-              </Link>
+              </a>
             </div>
           </div>
         </div>
