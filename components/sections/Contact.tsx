@@ -54,7 +54,7 @@ export function Contact() {
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Our Location</h3>
                   <p className="text-gray-600">
-                    Bay X, Trace Expert City, Maradana Road<br />
+                    Bay 9, Trace Expert City, Maradana Road<br />
                     Colombo 10, Sri Lanka.
                   </p>
                 </div>

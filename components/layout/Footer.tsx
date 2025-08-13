@@ -84,7 +84,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3 text-gray-300">
                 <MapPin className="h-5 w-5 text-[#1ED4D4]" />
-                <span>Bay X, Trace Expert City, Maradana Road, Colombo 10</span>
+                <span>Bay 9, Trace Expert City, Maradana Road, Colombo 10</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-300">
                 <Phone className="h-5 w-5 text-[#1ED4D4]" />
