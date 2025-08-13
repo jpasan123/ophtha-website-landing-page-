@@ -51,7 +51,7 @@ const awards = [
     description: 'Ophtha Innovations emerged as the Runners-up at She Loves Tech 2024, proudly representing Sri Lanka at the regional rounds in India.'
   },
   {
-    image: 'https://i.ibb.co/d4kPtKfG/image.png',
+    image: 'https://i.ibb.co/xSHKpVCr/Inviting-Card.jpg',
     title: 'Ophtha Innovations Named Hemas Slingshot 2.0 Finalist',
     description: 'Selected as a finalist in the Hemas Slingshot 2.0 accelerator, recognizing Ophtha Innovations progress and impact in developing med-tech solutions for diabetic retinopathy screening.'
   },
